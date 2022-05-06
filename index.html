@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>|Tip calculator|</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <h3>Splitter</h3>
+      </div>
+    </header>
+
+    <section class="calculator">
+      <div class="container">
+        <div class="inputs">
+          <div class="bill">
+            <label for="bill">Bill</label>
+            <input type="number" class="default-field" name="bill" />
+          </div>
+
+          <div class="tip-selector">
+            <p>Select Tip %</p>
+            <button type="menu" class="selector">5%</button>
+            <button type="menu" class="selector">10%</button>
+            <button type="menu" class="selector">15%</button>
+            <button type="menu" class="selector">25%</button>
+            <button type="menu" class="selector">50%</button>
+            <input
+              type="number"
+              class="selector"
+              class="default-field"
+              id="custom-tip"
+            />
+          </div>
+
+          <div class="number-people">
+            <label for="people">Number of People</label>
+            <label id="error" for="people">Can't be zero</label>
+            <input type="number" class="default-field" name="people" />
+          </div>
+        </div>
+        <div class="outputs">
+          <ul class="display">
+            <li>
+              <label for="tip-amount">Tip Amount</label>
+              <label for="tip-amount" class="per-person">/ person</label>
+              <output name="tip-amount">$0.00</output>
+            </li>
+            <li>
+              <label for="total">Total</label>
+              <label for="tip-amount" class="per-person">/ person</label>
+              <output name="total">$0.00</output>
+            </li>
+          </ul>
+          <div class="reset">
+            <button id="reset" type="submit">RESET</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </footer>
+  </body>
+</html>

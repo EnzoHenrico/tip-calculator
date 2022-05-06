@@ -1,0 +1,41 @@
+/* Section: Calculator */
+
+.container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+  background-color: white;
+  max-width: 700px;
+  border-radius: 12px;
+  box-shadow: 10px 10px 10px black;
+}
+
+/* Inputs */
+.container .inputs {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.container .inputs .tip-selector {
+  display: flex;
+  flex-direction: column;
+}
+
+.container .inputs .tip-selector .selector {
+  display: grid;
+}
+
+/* Outputs */
+
+.container .outputs {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 12px;
+  background-color: green;
+  margin: 30px 30px;
+}

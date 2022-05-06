@@ -1,0 +1,53 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: 0;
+  text-decoration: none;
+  list-style: none;
+  font-size: 24px;
+  font-family: "Space Mono", monospace;
+}
+
+html,
+body {
+  height: 100vh;
+  --strongCyan: hsl(172, 67%, 45%);
+  -verydarkcyan: hsl(183, 100%, 15%);
+  --darkGrayishCyan: hsl(186, 14%, 43%);
+  --grayishCyan: hsl(184, 14%, 56%);
+  --lightGrayishCyan: hsl(185, 41%, 84%);
+  --veryLightGrayishCyan: hsl(189, 41%, 97%);
+}
+
+/* Header */
+
+header {
+  display: flex;
+  justify-content: center;
+}
+header .logo {
+  font-size: 1.2rem;
+  display: block;
+  margin: 10% auto 5%;
+  width: 100%;
+  max-width: 80px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  padding-top: 15%;
+  margin: auto;
+  font-size: 0.8rem;
+}
+
+/* Footer */
+
+footer a {
+  color: hsl(228, 45%, 44%);
+  font-size: 0.8rem;
+}
+
+/* mobile breakponit */
+@media (max-width: 375px) {
+}
