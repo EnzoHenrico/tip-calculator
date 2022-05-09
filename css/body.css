@@ -3,39 +3,191 @@
 .container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
   margin: auto;
+  padding: 20px;
+  gap: 20px;
   background-color: white;
-  max-width: 700px;
-  border-radius: 12px;
-  box-shadow: 10px 10px 10px black;
+  max-width: 800px;
+  border-radius: 20px;
+  box-shadow: 10px 10px 30px #0000000d;
 }
 
 /* Inputs */
 .container .inputs {
-  padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  width: 100%;
+  margin: auto;
+}
+
+.container .inputs label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--darkGrayishCyan);
+}
+
+.container .inputs .default-field {
+  border: none;
+  background-color: var(--veryLightGrayishCyan);
+  border-radius: 5px;
+  padding: 10px 0px;
+}
+
+.container .inputs .bill {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+p#select-tip {
+  margin-bottom: 15px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--darkGrayishCyan);
 }
 
 .container .inputs .tip-selector {
   display: flex;
   flex-direction: column;
+  padding: 20px;
 }
 
-.container .inputs .tip-selector .selector {
+.container .inputs .tip-selector .selector-buttons {
   display: grid;
+  grid-template-columns: 30% 30% 30%;
+  gap: 10px;
 }
+
+.container .inputs .tip-selector .selector-buttons button {
+  color: white;
+  background-color: var(--verydarkcyan);
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.container .inputs .tip-selector .selector-buttons button:hover {
+  background-color: var(--lightGrayishCyan);
+  color: var(--verydarkcyan);
+}
+
+.container .inputs .tip-selector .selector-buttons button:active {
+  background-color: var(--strongCyan);
+  color: var(--verydarkcyan);
+}
+
+.container .inputs .tip-selector .selector-buttons input {
+  color: var(--verydarkcyan);
+  background-color: var(--veryLightGrayishCyan);
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 0.9rem;
+}
+
+input#field-bill {
+  background-image: url("/images/icon-dollar.svg");
+  background-position: 16px 20px;
+  background-repeat: no-repeat;
+  padding-left: 40px;
+  font-weight: 600;
+  color: var(--verydarkcyan);
+}
+
+input#field-people {
+  background-image: url("/images/icon-person.svg");
+  background-position: 16px 20px;
+  background-repeat: no-repeat;
+  padding-left: 40px;
+  font-weight: 600;
+  color: var(--verydarkcyan);
+}
+
+.container .inputs .number-people {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.container .inputs .number-people#labels {
+  display: flex;
+  justify-content: space-around;
+}
+
+.container .inputs .number-people label#error {
+  display: none;
+  font-size: 0.6rem;
+  color: rgb(255, 81, 50);
+}
+/* 
+if error ↓
+.container .inputs .number-people input:focus {
+  outline: 2px solid rgb(255, 81, 50);
+} */
 
 /* Outputs */
 
 .container .outputs {
-  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+  border-radius: 20px;
+  background-color: var(--verydarkcyan);
+  color: white;
+  height: 430px;
+}
+
+.container .outputs ul {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  border-radius: 12px;
-  background-color: green;
-  margin: 30px 30px;
+  padding: 30px 20px;
+}
+
+.container .outputs li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+}
+
+.container .outputs ul .labels {
+  display: flex;
+  flex-direction: column;
+}
+.container .outputs ul .labels .top-label {
+  font-size: 0.6rem;
+  font-weight: 600;
+}
+
+.container .outputs ul .labels .bottom-label {
+  font-size: 0.5rem;
+  font-weight: 600;
+  color: var(--darkGrayishCyan);
+}
+
+.container .outputs ul output {
+  color: var(--strongCyan);
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.container .outputs .button-reset {
+  padding: 30px;
+}
+
+.container .outputs .button-reset button#reset {
+  width: 100%;
+  color: var(--verydarkcyan);
+  background-color: var(--strongCyan);
+  border: none;
+  border-radius: 5px;
+  padding: 7px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  cursor: pointer;
 }

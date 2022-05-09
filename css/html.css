@@ -1,3 +1,5 @@
+/* DEFAULTS */
+
 * {
   padding: 0;
   margin: 0;
@@ -8,15 +10,21 @@
   font-family: "Space Mono", monospace;
 }
 
+/* Body */
 html,
 body {
   height: 100vh;
+  background-color: var(--lightGrayishCyan);
   --strongCyan: hsl(172, 67%, 45%);
-  -verydarkcyan: hsl(183, 100%, 15%);
+  --verydarkcyan: hsl(183, 100%, 15%);
   --darkGrayishCyan: hsl(186, 14%, 43%);
   --grayishCyan: hsl(184, 14%, 56%);
   --lightGrayishCyan: hsl(185, 41%, 84%);
   --veryLightGrayishCyan: hsl(189, 41%, 97%);
+}
+
+input:focus {
+  outline: 2px solid var(--strongCyan);
 }
 
 /* Header */
@@ -24,30 +32,46 @@ body {
 header {
   display: flex;
   justify-content: center;
-}
-header .logo {
-  font-size: 1.2rem;
-  display: block;
-  margin: 10% auto 5%;
-  width: 100%;
-  max-width: 80px;
-}
-
-footer {
-  display: flex;
-  justify-content: center;
-  padding-top: 15%;
-  margin: auto;
-  font-size: 0.8rem;
+  margin-bottom: 5%;
+  margin-top: 5%;
 }
 
 /* Footer */
+footer .attribuition {
+  display: flex;
+  justify-content: center;
+  padding-top: 10%;
+  color: var(--verydarkcyan);
+  font-size: 0.7rem;
+  margin: auto;
+}
 
-footer a {
-  color: hsl(228, 45%, 44%);
-  font-size: 0.8rem;
+footer .attribuition a {
+  color: var(--verydarkcyan);
+  font-size: 0.7rem;
+}
+
+/* BREAKPOINTS */
+
+/* desktop breakpoint */
+@media (max-width: 940px) {
+  .container {
+    flex-direction: column;
+    width: 80% !important;
+  }
+  footer .attribuition {
+    display: inline-block;
+    padding: 10% !important;
+    text-align: center;
+  }
 }
 
 /* mobile breakponit */
-@media (max-width: 375px) {
+@media (max-width: 490px) {
+  .container {
+    width: 100% !important;
+  }
+  .selector-buttons {
+    grid-template-columns: 50% 50% !important;
+  }
 }

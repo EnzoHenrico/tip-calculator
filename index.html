@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
 
+    <script src="/js/script.js"></script>
     <link
       rel="icon"
       type="image/png"
@@ -23,7 +23,7 @@
   <body>
     <header>
       <div class="logo">
-        <h3>Splitter</h3>
+        <img src="/images/logo.svg" alt="logo Splitter" />
       </div>
     </header>
 
@@ -32,44 +32,48 @@
         <div class="inputs">
           <div class="bill">
             <label for="bill">Bill</label>
-            <input type="number" class="default-field" name="bill" />
+            <input type="text" class="default-field" id="field-bill" name="bill" value="0"/>
           </div>
 
           <div class="tip-selector">
-            <p>Select Tip %</p>
-            <button type="menu" class="selector">5%</button>
-            <button type="menu" class="selector">10%</button>
-            <button type="menu" class="selector">15%</button>
-            <button type="menu" class="selector">25%</button>
-            <button type="menu" class="selector">50%</button>
-            <input
-              type="number"
-              class="selector"
-              class="default-field"
-              id="custom-tip"
-            />
+            <p id="select-tip">Select Tip %</p>
+            <div class="selector-buttons">
+              <button type="menu">5%</button>
+              <button type="menu">10%</button>
+              <button type="menu">15%</button>
+              <button type="menu">25%</button>
+              <button type="menu">50%</button>
+              <input type="text" id="custom-tip" placeholder="Custom" />
+            </div>
           </div>
 
           <div class="number-people">
-            <label for="people">Number of People</label>
-            <label id="error" for="people">Can't be zero</label>
-            <input type="number" class="default-field" name="people" />
+            <div id="labels">
+              <label for="people">Number of People</label>
+              <label id="error" for="people">Can't be zero</label>
+            </div>
+            <input type="text" class="default-field" id="field-people" name="people" value="0" />
           </div>
         </div>
+
         <div class="outputs">
-          <ul class="display">
+          <ul>
             <li>
-              <label for="tip-amount">Tip Amount</label>
-              <label for="tip-amount" class="per-person">/ person</label>
+              <div class="labels">
+                <label for="tip-amount" class="top-label">Tip Amount</label>
+                <label for="tip-amount" class="bottom-label">/ person</label>
+              </div>
               <output name="tip-amount">$0.00</output>
             </li>
             <li>
-              <label for="total">Total</label>
-              <label for="tip-amount" class="per-person">/ person</label>
+              <div class="labels">
+                <label for="total" class="top-label"">Total</label>
+                <label for="tip-amount" class="bottom-label">/ person</label>
+              </div>
               <output name="total">$0.00</output>
             </li>
           </ul>
-          <div class="reset">
+          <div class="button-reset">
             <button id="reset" type="submit">RESET</button>
           </div>
         </div>
@@ -77,10 +81,11 @@
     </section>
 
     <footer>
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
+      <div class="attribuition">
+        Challenge by&nbsp <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by&nbsp<a href="#">Enzo Henrico</a>.
+      </div>
+        
     </footer>
   </body>
 </html>
