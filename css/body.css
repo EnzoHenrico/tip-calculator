@@ -191,3 +191,8 @@ if error ↓
   font-weight: 600;
   cursor: pointer;
 }
+
+.container .outputs .button-reset button#reset:hover {
+  background-color: var(--lightGrayishCyan);
+  color: var(--verydarkcyan);
+}

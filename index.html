@@ -18,7 +18,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
-    <title>|Tip calculator|</title>
+    <title>| Tip calculator |</title>
   </head>
   <body>
     <header>
@@ -32,18 +32,18 @@
         <div class="inputs">
           <div class="bill">
             <label for="bill">Bill</label>
-            <input type="text" class="default-field" id="field-bill" name="bill" value="0"/>
+            <input type="text" name="bill" class="default-field" id="field-bill" placeholder="0" onchange="validateBill(value);"/>
           </div>
 
           <div class="tip-selector">
             <p id="select-tip">Select Tip %</p>
             <div class="selector-buttons">
-              <button type="menu">5%</button>
-              <button type="menu">10%</button>
-              <button type="menu">15%</button>
-              <button type="menu">25%</button>
-              <button type="menu">50%</button>
-              <input type="text" id="custom-tip" placeholder="Custom" />
+              <button type="menu" onclick="validatePercent(5);">5%</button>
+              <button type="menu" onclick="validatePercent(10);">10%</button>
+              <button type="menu" onclick="validatePercent(15);">15%</button>
+              <button type="menu" onclick="validatePercent(25);">25%</button>
+              <button type="menu" onclick="validatePercent(50);">50%</button>
+              <input type="text" id="custom-tip" placeholder="Custom" onchange="validatePercent(value);"/>
             </div>
           </div>
 
@@ -52,7 +52,7 @@
               <label for="people">Number of People</label>
               <label id="error" for="people">Can't be zero</label>
             </div>
-            <input type="text" class="default-field" id="field-people" name="people" value="0" />
+            <input type="text" name="people"class="default-field" id="field-people"  placeholder="0"onchange="validatePeople(value)"/>
           </div>
         </div>
 
@@ -63,18 +63,18 @@
                 <label for="tip-amount" class="top-label">Tip Amount</label>
                 <label for="tip-amount" class="bottom-label">/ person</label>
               </div>
-              <output name="tip-amount">$0.00</output>
+              <output name="tip-amount" id="out-tipAmount">$0.00</output>
             </li>
             <li>
               <div class="labels">
                 <label for="total" class="top-label"">Total</label>
                 <label for="tip-amount" class="bottom-label">/ person</label>
               </div>
-              <output name="total">$0.00</output>
+              <output name="total" id="out-total">$0.00</output>
             </li>
           </ul>
           <div class="button-reset">
-            <button id="reset" type="submit">RESET</button>
+            <button id="reset" type="reset" onclick="reset()">RESET</button>
           </div>
         </div>
       </div>
