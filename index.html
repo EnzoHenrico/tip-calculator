@@ -32,18 +32,20 @@
         <div class="inputs">
           <div class="bill">
             <label for="bill">Bill</label>
-            <input type="text" name="bill" class="default-field" id="field-bill" placeholder="0" onchange="validateBill(value);"/>
+            <input type="number" name="bill" class="default-field" id="field-bill" placeholder="0" 
+            onchange="billValue = value; calculate(tipPercent, billValue, numberOfPeople)"/>
           </div>
 
           <div class="tip-selector">
             <p id="select-tip">Select Tip %</p>
             <div class="selector-buttons">
-              <button type="menu" onclick="validatePercent(5);">5%</button>
-              <button type="menu" onclick="validatePercent(10);">10%</button>
-              <button type="menu" onclick="validatePercent(15);">15%</button>
-              <button type="menu" onclick="validatePercent(25);">25%</button>
-              <button type="menu" onclick="validatePercent(50);">50%</button>
-              <input type="text" id="custom-tip" placeholder="Custom" onchange="validatePercent(value);"/>
+              <button type="menu" onclick="tipPercent = 5;calculate(tipPercent, billValue, numberOfPeople)">5%</button>
+              <button type="menu" onclick="tipPercent = 10;calculate(tipPercent, billValue, numberOfPeople)">10%</button>
+              <button type="menu" onclick="tipPercent = 15;calculate(tipPercent, billValue, numberOfPeople)">15%</button>
+              <button type="menu" onclick="tipPercent = 25;calculate(tipPercent, billValue, numberOfPeople)">25%</button>
+              <button type="menu" onclick="tipPercent = 50;calculate(tipPercent, billValue, numberOfPeople)">50%</button>
+              <input type="text" id="custom-tip" placeholder="Custom" 
+              onchange="tipPercent = value;calculate(tipPercent, billValue, numberOfPeople);"/>
             </div>
           </div>
 
@@ -52,7 +54,8 @@
               <label for="people">Number of People</label>
               <label id="error" for="people">Can't be zero</label>
             </div>
-            <input type="text" name="people"class="default-field" id="field-people"  placeholder="0"onchange="validatePeople(value)"/>
+            <input type="number" name="people"class="default-field" id="field-people"  placeholder="0"
+            onchange="numberOfPeople = value; calculate(tipPercent, billValue, numberOfPeople)"/>
           </div>
         </div>
 

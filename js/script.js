@@ -1,49 +1,30 @@
 let tipPercent, billValue, numberOfPeople;
 
-// Validação de entradas
-
-function validateBill(billValue) {
-  if (billValue.isNaN()) {
-    calculate(tipPercent, billValue, numberOfPeople);
-  } else {
-    alert("só numero");
-  }
-}
-function validatePeople(peopleValue) {
-  if (peopleValue == 0) {
-    document.getElementById("error").style.display = "inline";
-  }
-  calculate(tipPercent, billValue, numberOfPeople);
-}
-function validatePercent(percentValue) {
-  calculate(tipPercent, billValue, numberOfPeople);
-}
-
-// Condicional de calculo
+// Condicional de input e execução dos cálculos
 function calculate(tipPercent, billValue, numberOfPeople) {
-  if ((billValue, numberOfPeople)) {
-    totalPerPerson(billValue, numberOfPeople);
-
+  let tipAmount, total;
+  if (billValue && numberOfPeople > 0) {
+    total = billValue / numberOfPeople;
+    outputTotal(total);
     if (tipPercent) {
-      tipAmountPerPerson(tipPercent, billValue, numberOfPeople);
+      tipAmount = ((billValue / numberOfPeople) * tipPercent) / 100;
+      outputAmount(tipAmount);
+      outputTotal(total + tipAmount);
     }
+  } else if (numberOfPeople <= 0) {
+    alert("People can't be 0");
   }
 }
 
-// Cálculo do "Tip Amount per person"
-function tipAmountPerPerson(tipPercent, billValue, numberOfPeople) {
-  const tipAmount = ((billValue / numberOfPeople) * tipPercent) / 100;
-
+// Executar output dos calculos
+function outputAmount(tipAmount) {
   return (document.getElementById("out-tipAmount").innerHTML =
     "$" + tipAmount.toFixed(2));
 }
 
-// Cálculo do "Total per person"
-function totalPerPerson(billValue, numberOfPeople) {
-  const total = billValue / numberOfPeople;
-
+function outputTotal(totalPerPerson) {
   return (document.getElementById("out-total").innerHTML =
-    "$" + total.toFixed(2));
+    "$" + totalPerPerson.toFixed(2));
 }
 
 // Limpar todos os valores dos campos
@@ -53,5 +34,5 @@ function reset() {
   document.getElementById("out-tipAmount").innerHTML = "$" + zero.toFixed(2);
   document.getElementById("field-bill").value = "";
   document.getElementById("field-people").value = "";
-  tipPercent = 0;
+  tipPercent = zero;
 }
